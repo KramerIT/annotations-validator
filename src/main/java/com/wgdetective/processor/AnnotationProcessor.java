@@ -1,6 +1,7 @@
 package com.wgdetective.processor;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 
 /**
  * @author Wladimir Litvinov
@@ -8,5 +9,5 @@ import java.lang.annotation.Annotation;
 public interface AnnotationProcessor<A extends Annotation> {
     Class<A> getAnnotation();
     boolean filter(final A annotation);
-    boolean validate(final Object o);
+    void validate(final Object o, final Field field);
 }

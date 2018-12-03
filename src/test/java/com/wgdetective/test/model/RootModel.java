@@ -7,8 +7,9 @@ import java.util.List;
  * @author Wladimir Litvinov
  */
 public class RootModel {
-    @NotNull
+    @Pattern(regexp = "\\d{1,3}", error = "not valid id!")
     private Long id;
+    @NotNull(error = "cannot be null")
     private String name;
     private LeafModel leaf;
     private List<LeafModel> leafs;
